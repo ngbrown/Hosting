@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace service_a
 {
@@ -22,6 +23,10 @@ namespace service_a
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddLogging(loggingBuilder =>
+            {
+                loggingBuilder.AddSeq(apiKey: "ggKNRjgWb3Wamdpyw6tp");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
