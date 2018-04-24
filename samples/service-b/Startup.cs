@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,13 +26,15 @@ namespace service_b
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            var random = new Random();
 
             app.Run(async (context) =>
             {
+                Thread.Sleep(random.Next(200) + 100);
+                if (random.Next(10) == 0)
+                {
+                    throw new Exception("You won the exception lottery");
+                }
                 await context.Response.WriteAsync("Hello World!");
             });
         }
