@@ -29,7 +29,9 @@ namespace service_a.Controllers
             try
             {
                 HttpClient client = new HttpClient();
-                var result = await client.GetAsync("http://localhost:50572/");
+                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5000/");
+                request.Headers.Add("Request-Id", this.Request.HttpContext.TraceIdentifier);
+                var result = await client.SendAsync(request);
                 if (result.IsSuccessStatusCode)
                 {
                     var responseString = await result.Content.ReadAsStringAsync();
@@ -58,6 +60,12 @@ namespace service_a.Controllers
             return View();
         }
 
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
