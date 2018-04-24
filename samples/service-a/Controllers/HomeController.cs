@@ -30,7 +30,7 @@ namespace service_a.Controllers
             {
                 HttpClient client = new HttpClient();
                 HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5000/");
-                request.Headers.Add("Request-Id", this.Request.HttpContext.TraceIdentifier);
+                request.Headers.Add("Request-Id", Activity.Current.Id + "1.");
                 var result = await client.SendAsync(request);
                 if (result.IsSuccessStatusCode)
                 {

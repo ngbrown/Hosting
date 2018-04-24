@@ -33,8 +33,9 @@
     <PackageReference Include="Microsoft.AspNetCore.DataProtection.Extensions" version="[2.1.0-rc1-30613]" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics" version="[2.1.0-rc1-30613]" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.Abstractions" version="[2.1.0-rc1-30613]" />
-    <PackageReference Include="Microsoft.AspNetCore.Hosting" version="[2.1.0-rc1-30613]" />
-    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" version="[2.1.0-rc1-30613]" />
+    <ProjectReference Include="..\..\src\Microsoft.AspNetCore.Hosting\Microsoft.AspNetCore.Hosting.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.AspNetCore.Hosting.Abstractions\Microsoft.AspNetCore.Hosting.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.AspNetCore.Hosting.Server.Abstractions\Microsoft.AspNetCore.Hosting.Server.Abstractions.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions" version="[2.1.0-rc1-30613]" />
     <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" version="[2.1.0-rc1-30613]" />
     <PackageReference Include="Microsoft.AspNetCore.Http" version="[2.1.0-rc1-30613]" />
@@ -119,8 +120,8 @@
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" version="[2.1.0-rc1-30613]" />
     <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" version="[2.1.0-rc1-30613]" />
     <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" version="[2.1.0-rc1-30613]" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" version="[2.1.0-rc1-30613]" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" version="[2.1.0-rc1-30613]" />
+    <ProjectReference Include="..\..\src\Microsoft.Extensions.Hosting\Microsoft.Extensions.Hosting.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.Extensions.Hosting.Abstractions\Microsoft.Extensions.Hosting.Abstractions.csproj" />
     <PackageReference Include="Microsoft.Extensions.Http" version="[2.1.0-rc1-30613]" />
     <PackageReference Include="Microsoft.Extensions.Identity.Core" version="[2.1.0-rc1-30613]" />
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" version="[2.1.0-rc1-30613]" />
